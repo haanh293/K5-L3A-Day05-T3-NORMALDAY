@@ -6,21 +6,25 @@
   <title>Prototype T3 Du lịch · Nhóm NORMALDAY (Hà Anh · Xuân Trường · Đăng Kiên)</title>
   <style>
     :root {
-      --ink: #1a202c;
-      --mut: #5a6578;
-      --line: #d8dee9;
-      --bg: #f3f5f8;
+      --ink: #1b2631;
+      --mut: #5c6b7a;
+      --line: #dbe2ea;
+      --bg: #f3f6f8;
       --card: #ffffff;
-      --g: #1b6546;
-      --gb: #e3f5ec;
-      --a: #92580a;
-      --ab: #fef3c7;
+      --vna-teal: #005f73;
+      --vna-teal-dark: #004352;
+      --vna-gold: #d4a017;
+      --vna-gold-soft: #fef9e7;
+      --g: #0f766e;
+      --gb: #f0fdfa;
+      --a: #92600a;
+      --ab: #fef9e7;
       --r: #b91c1c;
-      --rb: #fee2e2;
-      --b: #0f4c81;
-      --bb: #e0f2fe;
-      --p: #5b21b6;
-      --pb: #ede9fe;
+      --rb: #fef2f2;
+      --b: #005f73;
+      --bb: #e6f4f7;
+      --p: #7c5800;
+      --pb: #fef3c7;
     }
     * { box-sizing: border-box; }
     body {
@@ -28,41 +32,57 @@
       font-family: "Be Vietnam Pro", "Inter", "Segoe UI", Arial, sans-serif;
       color: var(--ink);
       background: var(--bg);
-      font-size: 14.5px;
+      font-size: 14px;
       line-height: 1.48;
     }
     header {
-      padding: 16px 28px 14px;
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      padding: 16px 24px 14px;
+      background: linear-gradient(125deg, #005f73 0%, #003e4d 100%);
+      border-bottom: 4px solid var(--vna-gold);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 62, 77, 0.16);
     }
     .hdr-top {
+      max-width: 1480px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       gap: 16px;
       flex-wrap: wrap;
     }
-    h1 { font-size: 19px; margin: 0 0 4px; color: var(--b); }
-    .sub { color: var(--mut); font-size: 13px; }
-    .badge-user {
-      background: var(--bb);
-      color: var(--b);
-      padding: 6px 12px;
-      border-radius: 10px;
-      font-size: 12.5px;
+    h1 { font-size: 19px; margin: 0 0 4px; color: #ffffff; }
+    .sub { color: rgba(255, 255, 255, 0.9); font-size: 13px; }
+    .sub code {
+      background: rgba(0, 0, 0, 0.25);
+      color: #fde68a;
+      padding: 1px 6px;
+      border-radius: 5px;
       font-weight: 600;
-      border: 1px solid #bae6fd;
+    }
+    .badge-user {
+      background: #ffffff;
+      color: var(--vna-teal-dark);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border: 2px solid var(--vna-gold);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
     .controls-bar {
+      max-width: 1480px;
+      margin: 12px auto 0;
       display: flex;
-      gap: 14px;
-      margin-top: 12px;
+      gap: 12px;
       flex-wrap: wrap;
       align-items: center;
-      padding-top: 10px;
-      border-top: 1px dashed var(--line);
+      background: #ffffff;
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1.5px solid #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     .seg-group {
       display: flex;
@@ -71,46 +91,62 @@
       flex-wrap: wrap;
     }
     .seg-group > span {
-      font-size: 13px;
-      color: var(--mut);
-      font-weight: 600;
+      font-size: 12.8px;
+      color: var(--vna-teal-dark);
+      font-weight: 700;
       margin-right: 2px;
     }
     .seg-btn {
       border: 1.5px solid var(--line);
-      background: #fff;
+      background: #ffffff;
+      color: var(--ink);
       border-radius: 999px;
-      padding: 6px 13px;
+      padding: 5px 12px;
       font: inherit;
-      font-size: 13px;
+      font-size: 12.5px;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.15s;
     }
-    .seg-btn:hover { border-color: var(--b); }
+    .seg-btn:hover { border-color: var(--vna-teal); background: var(--bb); }
     .seg-btn.on {
-      border-color: var(--b);
-      background: var(--b);
-      color: #fff;
-      font-weight: 600;
+      border-color: var(--vna-teal);
+      background: var(--vna-teal);
+      color: #ffffff;
+      font-weight: 700;
     }
     main {
       display: grid;
-      grid-template-columns: 440px 1fr;
-      gap: 24px;
-      padding: 20px 28px 28px;
-      max-width: 1380px;
+      grid-template-columns: 390px minmax(450px, 1fr) 360px;
+      gap: 18px;
+      padding: 18px 24px 18px;
+      max-width: 1480px;
       margin: 0 auto;
+      align-items: start;
     }
-    @media (max-width: 960px) {
+    @media (max-width: 1180px) {
       main { grid-template-columns: 1fr; }
     }
-    /* Phone Container */
+    .bottom-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding: 0 24px 24px;
+      max-width: 1480px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .bottom-row { grid-template-columns: 1fr; }
+    }
+    /* Center Interactive Chat Card */
     .phone {
-      background: #fff;
+      background: #ffffff;
       border: 1.5px solid #cbd5e1;
-      border-radius: 28px;
-      padding: 14px;
-      box-shadow: 0 8px 24px rgba(15, 76, 129, 0.08);
+      border-top: 6px solid var(--vna-teal);
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 10px 28px rgba(0, 67, 82, 0.08);
       display: flex;
       flex-direction: column;
     }
@@ -156,9 +192,7 @@
       flex-direction: column;
       gap: 10px;
       padding: 6px 4px;
-      min-height: 430px;
-      max-height: 580px;
-      overflow-y: auto;
+      min-height: 380px;
     }
     .me {
       align-self: flex-end;
@@ -206,8 +240,11 @@
     .ev {
       font-size: 12.2px;
       color: #334155;
-      border-left: 3.5px solid var(--b);
-      background: #f1f5f9;
+      border-left: 3.5px solid var(--vna-gold);
+      background: #fffdf5;
+      border-top: 1px solid #f5e6b3;
+      border-right: 1px solid #f5e6b3;
+      border-bottom: 1px solid #f5e6b3;
       padding: 7px 10px;
       border-radius: 0 8px 8px 0;
       margin-top: 8px;
@@ -335,30 +372,47 @@
     }
     .panel {
       background: #fff;
-      border: 1px solid var(--line);
+      border: 1.5px solid var(--line);
+      border-left: 5px solid var(--vna-teal);
       border-radius: 16px;
-      padding: 15px 18px;
+      padding: 15px 17px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
     }
     .panel h2 {
-      font-size: 15.5px;
-      margin: 0 0 8px;
-      color: var(--b);
+      font-size: 15px;
+      margin: 0 0 10px;
+      color: var(--vna-teal-dark);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
     }
     table {
       border-collapse: collapse;
       width: 100%;
-      font-size: 13px;
+      table-layout: fixed;
+      font-size: 12.2px;
     }
     td, th {
       border-bottom: 1px solid var(--line);
       padding: 7px 6px;
       text-align: left;
       vertical-align: top;
+      overflow-wrap: anywhere;
     }
-    th { color: var(--mut); font-weight: 600; background: #f8fafc; }
+    td:nth-child(1), th:nth-child(1) { width: 28%; }
+    td:nth-child(2), th:nth-child(2) { width: 27%; }
+    td:nth-child(3), th:nth-child(3) { width: 45%; }
+    td code { font-size: 11px; word-break: break-all; }
+    td .pill {
+      white-space: normal;
+      line-height: 1.3;
+      text-align: left;
+      padding: 3px 8px;
+      border-radius: 8px;
+    }
+    th { color: var(--vna-teal-dark); font-weight: 700; background: var(--bb); }
     .pill {
       display: inline-block;
       padding: 2px 8px;
@@ -381,9 +435,12 @@
     }
     .promise {
       font-size: 14px;
-      border-left: 4px solid var(--b);
-      padding: 8px 12px;
-      background: #f8fafc;
+      border-left: 4px solid var(--vna-gold);
+      padding: 9px 12px;
+      background: var(--vna-gold-soft);
+      border-top: 1px solid #f5e6b3;
+      border-right: 1px solid #f5e6b3;
+      border-bottom: 1px solid #f5e6b3;
       border-radius: 0 8px 8px 0;
     }
     .api-box {
@@ -463,7 +520,22 @@
 </header>
 
 <main>
-  <!-- CỘT TRÁI: MÀN HÌNH ĐIỆN THOẠI -->
+  <!-- CỘT TRÁI: MA TRẬN MỨC TỰ CHỦ 5 TOOL -->
+  <section class="panel">
+    <h2>Ma trận Mức tự chủ của 5 Tool & Cost-of-Error (§4.1)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Mức tự chủ</th>
+          <th>Lý do theo cái giá khi sai (Cost-of-Error) & Guardrail</th>
+        </tr>
+      </thead>
+      <tbody id="tools-tb"></tbody>
+    </table>
+  </section>
+
+  <!-- CỘT GIỮA: KHUNG CHAT TƯƠNG TÁC -->
   <section class="phone">
     <div class="bar">
       <span>← Đặt chỗ của tôi · <b>TRV-7Q2K</b></span>
@@ -500,47 +572,34 @@
     </div>
   </section>
 
-  <!-- CỘT PHẢI: BẢNG ĐIỀU KHIỂN, MỨC TỰ CHỦ & CHÚ THÍCH HAX/PAIR -->
-  <aside>
-    <div class="panel">
-      <h2>
-        <span>Lời hứa với khách hàng ở mức tự chủ này (§4.4)</span>
-        <span class="pill p-ask" id="cur-mode-badge">Mức ②: Cần khách duyệt</span>
-      </h2>
-      <div class="promise" id="promise"></div>
-    </div>
-
-    <div class="panel">
-      <h2>Ma trận Mức tự chủ của 5 Tool & Cost-of-Error (§4.1)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tool</th>
-            <th>Mức tự chủ</th>
-            <th>Lý do theo cái giá khi sai (Cost-of-Error) & Guardrail</th>
-          </tr>
-        </thead>
-        <tbody id="tools-tb"></tbody>
-      </table>
-    </div>
-
-    <div class="panel">
-      <h2>Ánh xạ Nguyên tắc HAX / PAIR vào chỗ cụ thể trên màn hình (§3.3 & §5)</h2>
-      <ul class="ann" id="ann-list"></ul>
-    </div>
-
-    <div class="panel" style="background:#f8fafc">
-      <h2>✨ Bonus (+3đ): Tích hợp lời gọi LLM thật (Tuỳ chọn khi Demo)</h2>
-      <div style="font-size:12.5px;color:var(--mut)">
-        Mặc định Prototype chạy bằng <b>Deterministic Policy Engine</b> (không cần key, 100% ổn định). Nếu muốn chạy <b>lời gọi Gemini API thật</b> để phân loại ý định & chọn tool cho ca lạ, dán Gemini API Key vào ô dưới (chỉ lưu trên RAM trình duyệt, không commit lên Git):
-      </div>
-      <div class="api-box">
-        <input type="password" id="gemini-key" placeholder="Dán Gemini API Key (AIza...) nếu muốn gọi AI thật">
-        <span id="api-status" class="pill p-auto">Đang dùng: Policy Engine + Guardrail nội bộ</span>
-      </div>
-    </div>
-  </aside>
+  <!-- CỘT PHẢI: ÁNH XẠ NGUYÊN TẮC HAX / PAIR -->
+  <section class="panel">
+    <h2>Ánh xạ Nguyên tắc HAX / PAIR vào chỗ cụ thể trên màn hình (§3.3 & §5)</h2>
+    <ul class="ann" id="ann-list"></ul>
+  </section>
 </main>
+
+<!-- HÀNG DƯỚI CÙNG: LỜI HỨA & BONUS LLM -->
+<section class="bottom-row">
+  <div class="panel">
+    <h2>
+      <span>Lời hứa với khách hàng ở mức tự chủ này (§4.4)</span>
+      <span class="pill p-ask" id="cur-mode-badge">Mức ②: Cần khách duyệt</span>
+    </h2>
+    <div class="promise" id="promise"></div>
+  </div>
+
+  <div class="panel">
+    <h2>✨ Bonus (+3đ): Tích hợp lời gọi LLM thật (Tuỳ chọn khi Demo)</h2>
+    <div style="font-size:12.5px;color:var(--mut)">
+      Mặc định Prototype chạy bằng <b>Deterministic Policy Engine</b> (không cần key, 100% ổn định). Nếu muốn chạy <b>lời gọi Gemini API thật</b> để phân loại ý định & chọn tool cho ca lạ, dán Gemini API Key vào ô dưới (chỉ lưu trên RAM trình duyệt, không commit lên Git):
+    </div>
+    <div class="api-box">
+      <input type="password" id="gemini-key" placeholder="Dán Gemini API Key (AIza...) nếu muốn gọi AI thật">
+      <span id="api-status" class="pill p-auto">Đang dùng: Policy Engine + Guardrail nội bộ</span>
+    </div>
+  </div>
+</section>
 
 <div class="foot">
   Bài nộp LAB5 · AI20K K5 · Lớp L3A · Track T3 Du lịch · Nhóm NORMALDAY (Nguyễn Hà Anh - 2A202603605 · Trần Xuân Trường - 2A202603617 · Hoàng Đăng Kiên - 2A202603636)
